@@ -7,9 +7,9 @@ import sqlite3
 import mysql.connector as mysql
 
 
-MY_HOST = 'pluto.local'
-MY_USER = 'appuser'
-MY_PASS = 'Spartacus'
+MY_HOST = 'localhost'
+MY_USER = 'newuser'
+MY_PASS = 'admin'
 
 
 def main():
@@ -31,7 +31,7 @@ def main():
 
     # connect to mysql
     try:
-        mysql_db = mysql.connect(host=MY_HOST, user=MY_USER, password=MY_PASS, database='scratch')
+        mysql_db = mysql.connect(host=MY_HOST, user=MY_USER, password=MY_PASS, database='world')
         mysql_cur = mysql_db.cursor(prepared=True)
         mysql_cur.execute("SHOW VARIABLES WHERE variable_name = 'version'")
         print(f"MySQL server version: {mysql_cur.fetchone()[1]}")
